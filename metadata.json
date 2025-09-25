@@ -1,0 +1,5 @@
+{
+  "name": "AI Guitar Image Generator",
+  "description": "An AI-powered application to generate high-quality images of various types of guitars based on detailed descriptions, designed to assist with creating product listings.",
+  "requestFramePermissions": []
+}
