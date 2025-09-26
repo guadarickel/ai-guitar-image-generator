@@ -1,9 +1,12 @@
 import { GoogleGenAI } from "@google/genai";
 
-// The API key is assumed to be available in the environment variables.
+// The API key is injected by the Vite build process from GitHub Secrets.
 const apiKey = process.env.API_KEY;
+
 if (!apiKey) {
-  throw new Error("API_KEY environment variable not set.");
+  // This error will be more prominent during local development if the .env file is missing.
+  // In production, the build will fail if the secret is not set.
+  throw new Error("VITE_GEMINI_API_KEY environment variable not set. Please create a .env file for local development or set a secret for production builds.");
 }
 const ai = new GoogleGenAI({ apiKey });
 

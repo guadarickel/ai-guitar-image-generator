@@ -4,9 +4,10 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // IMPORTANTE: Cambia esto al nombre de tu repositorio
-  base: '/ai-guitar-image-generator/', 
+  // IMPORTANT: Replace this with the name of your GitHub repository
+  base: '/ai-guitar-image-generator/',
   define: {
+    // This makes the API key available in the app code as process.env.API_KEY
     'process.env.API_KEY': JSON.stringify(process.env.VITE_GEMINI_API_KEY)
   }
 });
